@@ -34,7 +34,7 @@ def optimize_printing(jobs: List[Dict], constraints: Dict) -> Dict:
     # Перетворення вхідних даних в об'єкти PrinterConstraints
     constraints = PrinterConstraints(**constraints)
     # Сортування за пріоритетом та часом друку
-    jobs.sort(key=lambda x: (x.priority, x.print_time))
+    jobs.sort(key=lambda x: (x.priority, x.print_time * -1))
     # pprint(jobs)
     print_order = []
     total_time = 0
